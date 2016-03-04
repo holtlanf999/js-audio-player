@@ -1,0 +1,90 @@
+body {
+	background-color: #000;
+	color: #fff;
+}
+
+.player-song-list {
+	border-radius: 1em;
+	display: block;
+	float: right;
+	margin: 1em;
+	overflow: hidden;
+	padding: 1em;
+	width: 25% ;
+}
+
+.prev,
+.next,
+.repeat,
+.play-pause {
+	height: 2.5em;
+	width: 2.5em;
+	margin: 0 0.5em;
+}
+
+.play {
+	height: 3em;
+	width: 3em;
+	margin: 0.5em 0 0.5em 1em;
+}
+
+.repeat {
+	stroke: #333;
+	fill: transparent;
+}
+
+.play:hover,
+.prev:hover,
+.next:hover,
+.repeat:hover,
+.play-pause:hover,
+.repeat:hover {
+	color: rgba(40, 40, 40, 0.5);
+}
+
+.song-list li p {
+	float: right;
+	margin: 1.5em 1em 1.5em 0;
+}
+
+.player-song-list ul li {
+	background-color: rgba( 0, 0, 0, 0.5 );
+	border: 1px solid #fff;
+	margin: 2em auto;
+}
+
+.player-bar {
+	border-radius: 1em;
+	float: left;
+	display: block;
+	margin: 1em;
+	padding: 1em;
+	width: 40% ;
+}
+
+li {
+	list-style: none;
+}
+
+.time {
+	float: right;
+}
+
+.vol-range {
+	border-radius: 1em;
+	border: none; 
+}
+
+.song-range {
+	border-style: none solid none solid;
+	background-color: transparent;
+	height: 0.2em;
+	width: 100%;
+}
+
+.volume img {
+	width: 2em; 
+	height: 2em;
+	margin: 0.6em 0 0 0;
+}
+

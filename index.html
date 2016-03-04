@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		<!-- meta -->
+		<meta charset=utf-8>
+		<meta name="author" content="Lanford Gabriel Murillo">
+		<meta name="description" content="Javascript Audio Player">
+		<meta name=viewport content="width=device-width, initial-scale=1">
+
+		<!-- styles -->
+		<link rel="stylesheet" href="css/normalize.css"/>
+		<link rel="stylesheet" href="css/main.css"/>
+
+		<title>JSAudioPlayer</title>
+	</head>
+	<body>
+		<!-- main content -->
+		<div id="player-bar" class="player-bar">
+			<img src="img/prev.svg" id="prev" class="prev"/>
+			<img src="img/play.svg" id="play-pause" class="play-pause"/>
+			<img src="img/next.svg" id="next" class="next"/>
+			<img src="img/repeat.svg" id="repeat" class="repeat"/>
+			
+			<p id="duration" class="time"></p>
+			<p id="currentTime" class="time"></p>
+
+			<progress id="song-range" class="song-range" type="range" name="song-range" min="0" max="1" value="0"/></progress>
+
+			<div class="volume">
+				<img src="img/minvol.png"/>
+				<input id="vol-range" class="vol-range" type="range" name="vol-range" min="0" max="1" step="0.010"/>
+				<img src="img/maxvol.png"/>
+			</div>
+
+			<p id="song-name"><!-- Song's name --></p>
+			<p id="artist"><!-- Artist's name --></p>
+		</div>
+
+		<div class="player-song-list">
+			<ul id="songList" class="song-list">
+			</ul>
+		</div>		
+		
+		<!-- script -->
+		<script type="text/javascript" src="js/AudioPlayer.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>

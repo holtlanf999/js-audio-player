@@ -46,7 +46,7 @@
 		* Audio events.
 		*/
 		audio.addEventListener('durationchange', setDuration);
-		audio.addEventListener('timeupdate',setCurrentTime);
+		audio.addEventListener('timeupdate', setDuration);
 		audio.addEventListener('ended', autoChange);
 
 		/*
@@ -54,12 +54,12 @@
 		*/
 		for(i = 0; i < songList.length; i++){
 			document.querySelector('#songList').innerHTML += 
-			'<li>' + 
-				'<img src="img/play.svg" onclick= "player.selectList(' + i + ')" class="play"/>' + 
+			'<li class="song-list-container">' + 
+				'<img class="play" src="img/play.svg" onclick="player.selectList(' + i + ')"/>' + 
 				'<p>' + songList[i].name + '</p>' +
 			'</li>';
 		}
-		setCurrentTime();
+		// setCurrentTime();
 	};
 
 	function autoChange(){
@@ -69,13 +69,18 @@
 	function setDuration(){
 		var mins = Math.floor(audio.duration / 60);
 		var secs = (Math.ceil(audio.duration) / 60) * 10;
+
 		duration.innerHTML = ' / ' + mins + ':' + Math.round(secs);
+		songRange.setAttribute('value', audio.currentTime / audio.duration);
+
+		cTime = Math.floor(this.currentTime);
+	 	ontimeupdate= console.log(cTime);
 	};
 
-	function setCurrentTime(){
-		currentTime.innerHTML = 0 + ':' + Math.floor(audio.currentTime);
-		songRange.setAttribute('value', audio.currentTime / audio.duration);
-	}
+	// function setCurrentTime(){
+	// 	// currentTime.innerHTML = 0 + ':' + Math.floor(audio.currentTime);
+	// 	cTime = Math.floor(this.currentTime);
+	// }
 
 	/*
 	* Play-Pause actual song.
@@ -137,7 +142,7 @@
 	/*
 	* Play next song.
 	*/
-	next.addEventListener('click', function () {
+	next.addEventListener('click', function nextSong() {
 		if(cont < songList.length - 1){
 			cont++;
 			audio.setAttribute('src', songList[cont].src);

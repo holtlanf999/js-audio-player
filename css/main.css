@@ -1,56 +1,12 @@
 body {
 	background-color: #000;
+	background-size: cover;
+	background-repeat: no-repeat;
 	color: #fff;
 }
 
-.player-song-list {
-	border-radius: 1em;
-	display: block;
-	float: right;
-	margin: 1em;
-	overflow: hidden;
-	padding: 1em;
-	width: 25% ;
-}
-
-.prev,
-.next,
-.repeat,
-.play-pause {
-	height: 2.5em;
-	width: 2.5em;
-	margin: 0 0.5em;
-}
-
-.play {
-	height: 3em;
-	width: 3em;
-	margin: 0.5em 0 0.5em 1em;
-}
-
-.repeat {
-	stroke: #333;
-	fill: transparent;
-}
-
-.play:hover,
-.prev:hover,
-.next:hover,
-.repeat:hover,
-.play-pause:hover,
-.repeat:hover {
-	color: rgba(40, 40, 40, 0.5);
-}
-
-.song-list li p {
-	float: right;
-	margin: 1.5em 1em 1.5em 0;
-}
-
-.player-song-list ul li {
-	background-color: rgba( 0, 0, 0, 0.5 );
-	border: 1px solid #fff;
-	margin: 2em auto;
+.content-wrapper {
+	box-shadow: 10px 10px 5px #888888;
 }
 
 .player-bar {
@@ -62,11 +18,66 @@ body {
 	width: 40% ;
 }
 
-li {
+/* 
+* player buttons 
+*/
+.prev,
+.next,
+.repeat,
+.play-pause {
+	height: 2.5em;
+	width: 2.5em;
+	margin: 0 0.5em;
+}
+
+.play {
+	height: 2em;
+	width: 2em;
+	margin: 0.5em;
+}
+
+.play:hover,
+.prev:hover,
+.next:hover,
+.repeat:hover,
+.play-pause:hover,
+.repeat:hover {
+	color: rgba(40, 40, 40, 0.5);
+}
+
+.pressed {
+	background-color: green;
+}
+
+/* 
+* Player songs list 
+*/
+.player-song-list {
+	display: inline-block;
+	float: right;
+	margin: 1em;
+	overflow: hidden;
+	padding: 0.5em; 
+	width: 35% ;
+}
+
+.song-list {
+	padding: 0;
+}
+
+.song-list-container {
+	background-color: rgba(20, 20, 20, 0.3);
 	list-style: none;
+	margin: 1em auto 0;
+}
+
+.song-list-container p {
+	float: right;
+	margin: 1em 1em 1em 0;
 }
 
 .time {
+	color: #E1951D;
 	float: right;
 }
 
@@ -88,3 +99,46 @@ li {
 	margin: 0.6em 0 0 0;
 }
 
+/* 
+*	Max-width 1024px
+*/
+@media (max-width: 1024px) {
+	.player-bar {
+		display: inline-block;
+		margin: 2em 5% 0;
+		padding: 0; 
+		width: 90%
+	}
+	
+	.vol-range {
+		margin: 1em 0;
+	}
+
+	.player-song-list {
+		display: inline-block;
+		margin: 0 5%;
+		padding: 0;
+		width: 90%;
+	}
+
+	.song-list-container {
+		margin: 0.5em 2.5%;
+		overflow: hidden;
+		padding: 0.5em;
+		width: 95%;
+	}
+
+	.play {
+		display: inline-block;
+		width: 10%;
+		margin: auto 0.5em;
+	}
+
+	.song-list-container p {
+		display: inline-block;
+		float: none;
+		margin: auto;
+		text-align: left;
+		width: 80%;
+	}
+}
